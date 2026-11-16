@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Authors & Their Book Counts</h2>
+<table>
+    <tr><th>Author</th><th>Country</th><th>Books Written</th></tr>
+    {% for a in author_counts %}
+    <tr><td>{{ a.author_name }}</td><td>{{ a.country }}</td><td>{{ a.books_written }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Books Where Author & Publisher Share the Same Country</h2>
+<table>
+    <tr><th>Book Title</th><th>Author</th><th>Publisher</th><th>Country</th></tr>
+    {% for b in local_books %}
+    <tr><td>{{ b.title }}</td><td>{{ b.author_name }}</td><td>{{ b.publisher_name }}</td><td>{{ b.country }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

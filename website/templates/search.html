@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Books (Cheapest First)</h2>
+<form method="GET" action="/search">
+    <input type="text" name="keyword" placeholder="Title keyword..." value="{{ keyword }}">
+    <input type="number" step="0.01" name="min_price" placeholder="Min Price" value="{{ min_price }}">
+    <input type="number" step="0.01" name="max_price" placeholder="Max Price" value="{{ max_price }}">
+    <select name="category_id">
+        <option value="">All Categories</option>
+        {% for c in categories %}
+        <option value="{{ c.category_id }}" {% if selected_cat == c.category_id|string %}selected{% endif %}>{{ c.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Search</button>
+</form>
+<table>
+    <tr><th>ID</th><th>Title</th><th>Price</th><th>Year</th><th>Author</th><th>Category</th></tr>
+    {% for b in books %}
+    <tr><td>{{ b.book_id }}</td><td>{{ b.title }}</td><td>${{ b.price }}</td><td>{{ b.publish_year }}</td><td>{{ b.author_name }}</td><td>{{ b.category_name }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

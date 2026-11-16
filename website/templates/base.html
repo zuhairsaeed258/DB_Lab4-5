@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library System - Lab 4</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
+        nav { background: #2c3e50; padding: 12px; margin-bottom: 20px; border-radius: 5px; }
+        nav a { color: white; text-decoration: none; margin-right: 18px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 25px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #34495e; color: white; }
+        form { background: white; padding: 15px; border: 1px solid #ddd; margin-bottom: 20px; }
+        input, select, button { padding: 8px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/search">F2.1 Search Books</a>
+        <a href="/catalogue">F2.2 Catalogue</a>
+        <a href="/reports">F2.3 Reports</a>
+        <a href="/loans">F2.4 Loans</a>
+        <a href="/most-borrowed">F2.5 Most Borrowed</a>
+        <a href="/authors-books">F2.6 Authors & Books</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

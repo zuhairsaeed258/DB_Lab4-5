@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Library Price Summary</h2>
+<table>
+    <tr><th>Total Price</th><th>Smallest Price</th><th>Largest Price</th></tr>
+    <tr><td>${{ summary.total_price }}</td><td>${{ summary.min_price }}</td><td>${{ summary.max_price }}</td></tr>
+</table>
+
+<h2>Books & Average Price per Category</h2>
+<table>
+    <tr><th>Category</th><th>Total Books</th><th>Average Price</th></tr>
+    {% for row in cat_stats %}
+    <tr><td>{{ row.category_name }}</td><td>{{ row.total_books }}</td><td>${{ row.avg_price or 0 }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Authors with At Least 2 Books</h2>
+<table>
+    <tr><th>Author</th><th>Book Count</th></tr>
+    {% for a in prolific_authors %}
+    <tr><td>{{ a.author_name }}</td><td>{{ a.book_count }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

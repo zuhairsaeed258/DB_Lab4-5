@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Top 3 Most Borrowed Books</h2>
+<table>
+    <tr><th>Book Title</th><th>Total Loans</th></tr>
+    {% for b in top_books %}
+    <tr><td>{{ b.title }}</td><td>{{ b.loan_count }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>Top Borrowing Member</h2>
+<table>
+    <tr><th>Member Name</th><th>Total Loans</th></tr>
+    {% if top_member %}
+    <tr><td>{{ top_member.name }}</td><td>{{ top_member.loan_count }}</td></tr>
+    {% endif %}
+</table>
+{% endblock %}

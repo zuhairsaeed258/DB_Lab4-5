@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>F2.6 (a) All Countries (Authors & Publishers - UNION)</h2>
+<table>
+    <tr><th>Country</th></tr>
+    {% for c in all_countries %}
+    <tr><td>{{ c.country }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.6 (b) Countries With Both an Author and a Publisher (INTERSECT)</h2>
+<table>
+    <tr><th>Country</th></tr>
+    {% for c in both_countries %}
+    <tr><td>{{ c.country }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.6 (c) Countries With an Author But No Publisher (EXCEPT)</h2>
+<table>
+    <tr><th>Country</th></tr>
+    {% for c in author_only_countries %}
+    <tr><td>{{ c.country }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.6 (d) Unified List of Authors and Members (UNION ALL)</h2>
+<table>
+    <tr><th>Name</th><th>Type</th></tr>
+    {% for p in people %}
+    <tr><td>{{ p.name }}</td><td>{{ p.type }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

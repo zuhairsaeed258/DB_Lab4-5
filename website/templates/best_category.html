@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>F2.3 (a) Most Expensive Book in Each Category</h2>
+<table>
+    <tr><th>Category</th><th>Title</th><th>Price</th></tr>
+    {% for b in most_expensive %}
+    <tr><td>{{ b.category_name }}</td><td>{{ b.title }}</td><td>${{ b.price }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.3 (b) Books Costing More Than Their Category Average</h2>
+<table>
+    <tr><th>Category</th><th>Title</th><th>Price</th></tr>
+    {% for b in above_cat_avg %}
+    <tr><td>{{ b.category_name }}</td><td>{{ b.title }}</td><td>${{ b.price }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

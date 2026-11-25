@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Library System - Lab 4</title>
+    <title>Library System - Lab 5</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 30px; background: #f9f9f9; }
-        nav { background: #2c3e50; padding: 12px; margin-bottom: 20px; border-radius: 5px; }
-        nav a { color: white; text-decoration: none; margin-right: 18px; font-weight: bold; }
+        nav { background: #2c3e50; padding: 12px; margin-bottom: 20px; border-radius: 5px; line-height: 2; }
+        nav a { color: white; text-decoration: none; margin-right: 16px; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
+        hr.nav-sep { border: 0; border-top: 1px solid #4a627a; margin: 6px 0; }
         table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 25px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background: #34495e; color: white; }
@@ -17,12 +18,23 @@
 </head>
 <body>
     <nav>
-        <a href="/search">F2.1 Search Books</a>
-        <a href="/catalogue">F2.2 Catalogue</a>
-        <a href="/reports">F2.3 Reports</a>
-        <a href="/loans">F2.4 Loans</a>
-        <a href="/most-borrowed">F2.5 Most Borrowed</a>
-        <a href="/authors-books">F2.6 Authors & Books</a>
+        <div>
+            <a href="/search">Search Books</a>
+            <a href="/catalogue">Catalogue</a>
+            <a href="/reports">Reports</a>
+            <a href="/loans">Loans</a>
+            <a href="/most-borrowed">Most Borrowed</a>
+            <a href="/authors-books">Authors & Books</a>
+        </div>
+        <hr class="nav-sep">
+        <div>
+            <a href="/above-average">F2.1 Above Average</a>
+            <a href="/never-borrowed">F2.2 Never Borrowed</a>
+            <a href="/best-category">F2.3 Best of Category</a>
+            <a href="/active-members">F2.4 Active Members</a>
+            <a href="/reviews">F2.5 Reviews</a>
+            <a href="/countries-people">F2.6 Countries & People</a>
+        </div>
     </nav>
     {% block content %}{% endblock %}
 </body>

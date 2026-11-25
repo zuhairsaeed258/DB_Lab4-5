@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>F2.5 (a) All Books Review Summary</h2>
+<table>
+    <tr><th>Book ID</th><th>Title</th><th>Review Count</th><th>Average Rating</th><th>Rating Label</th></tr>
+    {% for r in all_reviews %}
+    <tr><td>{{ r.book_id }}</td><td>{{ r.title }}</td><td>{{ r.review_count }}</td><td>{{ r.avg_rating }}</td><td>{{ r.rating_label }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.5 (b) Books Rated Above Overall Average</h2>
+<table>
+    <tr><th>Book ID</th><th>Title</th><th>Average Rating</th></tr>
+    {% for t in top_rated %}
+    <tr><td>{{ t.book_id }}</td><td>{{ t.title }}</td><td>{{ t.avg_rating }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

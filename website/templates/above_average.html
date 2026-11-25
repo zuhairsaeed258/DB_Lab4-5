@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>F2.1 Books Above Library Average Price (Most Expensive First)</h2>
+<table>
+    <tr><th>Title</th><th>Price</th><th>Library Average Price</th></tr>
+    {% for b in books %}
+    <tr><td>{{ b.title }}</td><td>${{ b.price }}</td><td>${{ b.avg_library_price }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

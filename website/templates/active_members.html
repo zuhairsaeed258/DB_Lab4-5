@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>F2.4 (a) Members With More Loans Than Average</h2>
+<table>
+    <tr><th>Member ID</th><th>Name</th><th>Loan Count</th><th>Average Loans per Member</th></tr>
+    {% for m in active_list %}
+    <tr><td>{{ m.member_id }}</td><td>{{ m.name }}</td><td>{{ m.loan_count }}</td><td>{{ m.avg_loans_per_member }}</td></tr>
+    {% endfor %}
+</table>
+
+<h2>F2.4 (b) Authors With At Least One Borrowed Book</h2>
+<table>
+    <tr><th>Author ID</th><th>Name</th><th>Country</th></tr>
+    {% for a in borrowed_authors %}
+    <tr><td>{{ a.author_id }}</td><td>{{ a.name }}</td><td>{{ a.country }}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}
